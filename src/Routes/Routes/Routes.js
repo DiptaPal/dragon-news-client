@@ -19,7 +19,7 @@ export const routes = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: async() => {
-                    return fetch('http://localhost:5000/news')
+                    return fetch('https://dragon-news-server-puce.vercel.app/news')
                 }
 
             },
@@ -27,14 +27,14 @@ export const routes = createBrowserRouter([
                 path: '/category/:id',
                 element: <Category></Category>,
                 loader: async({params}) => {
-                   return fetch(`http://localhost:5000/category/${params.id}`)
+                   return fetch(`https://dragon-news-server-puce.vercel.app/category/${params.id}`)
                 }
             },
             {
                 path: '/news/:id',
                 element: <PrivateRoutes><News></News></PrivateRoutes>,
                 loader: async({params}) => {
-                    return fetch(`http://localhost:5000/news/${params.id}`)
+                    return fetch(`https://dragon-news-server-puce.vercel.app/news/${params.id}`)
                 }
             },
             {
